@@ -5,7 +5,7 @@ from plugins.tr import *
 from plugins.tr import TGPK_TEXT, VSONG_TEXT, PASTE_TEXT, INFO_TEXT, STREAM_TEXT, START_TEXT, HELP_TEXT
 from pyrogram.errors import MessageNotModified
 
-@Client.on_message(filters.command("start"))
+@Client.on_message(filters.command("mstart"))
 async def start(client, message):
    buttons = [
             [
