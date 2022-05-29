@@ -5,7 +5,7 @@ from plugins.tr import *
 from plugins.tr import TGPK_TEXT, VSONG_TEXT, PASTE_TEXT, INFO_TEXT, STREAM_TEXT, START_TEXT, HELP_TEXT
 from pyrogram.errors import MessageNotModified
 
-@Client.on_message(filters.command("start"))
+@Client.on_message(filters.command("mstart"))
 async def start(client, message):
    buttons = [
             [
@@ -35,7 +35,7 @@ async def start(client, message):
 
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
-    if query.data=="help":
+    if query.data=="mhelp":
         buttons = [
             [
                 InlineKeyboardButton("Sᴛʀᴇᴀᴍ", callback_data="stream"),
@@ -143,7 +143,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         except MessageNotModified:
             pass
 
-    elif query.data=="start":
+    elif query.data=="mstart":
         buttons = [
             [
                 InlineKeyboardButton("❔ Hᴇʟᴘ & Cᴏᴍᴍᴀɴᴅꜱ ❔", callback_data="help"),
